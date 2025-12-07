@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Game Uler Makan Buah</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-wrap">
+    <div class="canvas-card">
+      <div style="width:100%;display:flex;justify-content:space-between;align-items:center;">
+        <div class="title">Uler Makan Buah 🐍</div>
+        <div class="score" id="scoreLabel">Skor: 0</div>
+      </div>
+
+      <!-- Canvas game -->
+      <canvas id="gameCanvas" width="600" height="600"></canvas>
+
+      <div style="width:100%;display:flex;gap:8px;justify-content:center;flex-wrap:wrap;">
+        <button class="btn" id="startBtn">Mulai</button>
+        <button class="ghost" id="pauseBtn">Pause</button>
+        <button class="ghost" id="resetBtn">Restart</button>
+      </div>
+    </div>
+
+    <div class="side-panel">
+      <div class="title">Kontrol</div>
+
+      <div class="meta info-box">
+        • Gunakan tombol panah ← ↑ → ↓ atau WASD untuk bergerak.<br>
+        • Di perangkat sentuh: gunakan tombol di bawah untuk mengendalikan.<br>
+        • Makan buah untuk menambah panjang & skor. Jangan menabrak dinding atau tubuh sendiri.
+      </div>
+
+      <div style="display:flex;gap:8px;">
+        <div style="flex:1">
+          <div class="meta">Kecepatan:</div>
+          <input id="speedRange" type="range" min="4" max="18" value="10" />
+        </div>
+        <div style="width:80px;display:flex;flex-direction:column;align-items:flex-end;">
+          <div class="meta">Grid</div>
+          <div style="font-weight:700;color:var(--accent);">30 x 30</div>
+        </div>
+      </div>
+
+      <div class="meta">Mode Buah:</div>
+      <div style="display:flex;gap:6px;">
+        <button class="ghost" id="appleMode">🍎 Buah Biasa</button>
+        <button class="ghost" id="goldMode">⭐ Buah Emas</button>
+      </div>
+
+      <div style="margin-top:8px">
+        <div class="meta">Kontrol Sentuh</div>
+        <div class="touch-pad" id="touchPad">
+          <div></div>
+          <div class="pad-btn" data-dir="up">↑</div>
+          <div></div>
+
+          <div class="pad-btn" data-dir="left">←</div>
+          <div class="pad-btn" data-dir="down">↓</div>
+          <div class="pad-btn" data-dir="right">→</div>
+        </div>
+      </div>
+
+      <div class="footer-small">Dibuat oleh: JASWA ARIANSYA • Mainkan di desktop atau HP</div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
